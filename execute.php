@@ -18,6 +18,11 @@ try {
     exit;
   }
 
+  header("Content-Type: application/json");
+  $parameters = array('chat_id' => $chatId, "text" => 'test...');
+  $parameters["method"] = "sendMessage";
+  echo json_encode($parameters);
+
   throw new Exception("Test Eccezione!");
 
   $messageId = isset($message['message_id']) ? $message['message_id'] : "";
