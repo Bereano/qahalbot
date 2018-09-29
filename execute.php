@@ -30,8 +30,7 @@ try {
   $text = strtolower($text);
 
 } catch (Exception $e) {
-  //$text = 'Caught exception: ' . $e->getMessage() . "\n";
-  $text = 'Errore!';
+  $text = 'Caught exception: ' . $e->getMessage() . "\n";
 }
 
 
