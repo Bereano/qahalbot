@@ -11,24 +11,29 @@ try {
   }
 
   $message = isset($update['message']) ? $update['message'] : "";
-  $text = isset($message['text']) ? $message['text'] : "";
-  $text = trim($text);
-
-  if (substr($text, 0, 1) == '/')
-  {
-    exit;
-  }
-
   $messageId = isset($message['message_id']) ? $message['message_id'] : "";
   $chatId = isset($message['chat']['id']) ? $message['chat']['id'] : "";
   $firstname = isset($message['chat']['first_name']) ? $message['chat']['first_name'] : "";
   $lastname = isset($message['chat']['last_name']) ? $message['chat']['last_name'] : "";
   $username = isset($message['chat']['username']) ? $message['chat']['username'] : "";
   $date = isset($message['date']) ? $message['date'] : "";
+  $text = isset($message['text']) ? $message['text'] : "";
 
-  $a = 3/0;
+  $text = strtolower(trim($text));
 
-  $text = strtolower($text);
+  switch ($text) {
+    case '/help':
+      $text = '+---------------------------+' . '\n' .
+              '|Come possiamo aiutarti?    |' . '\n' .
+              '+---------------------------+' . '\n';
+      break;
+
+    default:
+      $text = 'Comando non riconosciuto...';
+      break;
+  }
+
+  //$text = strtolower($text);
 
 } catch (Exception $e) {
   $text = 'Caught exception: ' . $e->getMessage();
