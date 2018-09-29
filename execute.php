@@ -1,6 +1,6 @@
 <?php
 
-try {
+//try {
 
   $content = file_get_contents("php://input");
   $update = json_decode($content, true);
@@ -28,9 +28,9 @@ try {
 
   $text = strtolower($text);
 
-catch (Exception $e) {
-  $text = 'Caught exception: ',  $e->getMessage(), "\n";
-}
+//catch (Exception $e) {
+//  $text = 'Caught exception: ',  $e->getMessage(), "\n";
+//}
 
 
 header("Content-Type: application/json");
