@@ -26,8 +26,6 @@ try {
   $username = isset($message['chat']['username']) ? $message['chat']['username'] : "";
   $date = isset($message['date']) ? $message['date'] : "";
 
-  throw new Exception("Test Eccezione!");
-
   $a = 3/0;
 
   $text = strtolower($text);
