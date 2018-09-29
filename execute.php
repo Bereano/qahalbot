@@ -35,11 +35,11 @@ try {
   //$text = 'Caught exception: ' . $e->getMessage();
   $text = 'Errore!!!';
 
-  /*header("Content-Type: application/json");
+  header("Content-Type: application/json");
   $parameters = array('chat_id' => $chatId, "text" => $text);
   $parameters["method"] = "sendMessage";
   echo json_encode($parameters);
-  exit;*/
+  exit;
 }
 
 
