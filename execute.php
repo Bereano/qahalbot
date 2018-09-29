@@ -5,7 +5,7 @@ try {
   $content = file_get_contents("php://input");
   $update = json_decode($content, true);
 
-  throw new Exception("Test Eccezione!"); 
+  throw new Exception("Test Eccezione!");
 
   if(!$update)
   {
@@ -32,7 +32,7 @@ try {
   $text = strtolower($text);
 
 } catch (Exception $e) {
-  $text = 'Caught exception: ' . $e->getMessage() . "\n";
+  $text = 'Caught exception: ' . $e->getMessage();
 }
 
 
