@@ -5,6 +5,7 @@ try {
   $content = file_get_contents("php://input");
   $update = json_decode($content, true);
 
+  $text = '';
   throw new Exception("Test Eccezione!");
 
   if(!$update)
@@ -34,11 +35,11 @@ try {
   //$text = 'Caught exception: ' . $e->getMessage();
   $text = 'Errore!!!';
 
-  header("Content-Type: application/json");
+  /*header("Content-Type: application/json");
   $parameters = array('chat_id' => $chatId, "text" => $text);
   $parameters["method"] = "sendMessage";
   echo json_encode($parameters);
-  exit;
+  exit;*/
 }
 
 
