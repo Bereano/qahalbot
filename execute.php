@@ -10,10 +10,10 @@ try {
     exit;
   }
 
-  if (substr($update['message'], 1, 1) == '/')
+  /*if (substr($update['message'], 1, 1) == '/')
   {
     exit;
-  }
+  }*/
 
   $message = isset($update['message']) ? $update['message'] : "";
   $messageId = isset($message['message_id']) ? $message['message_id'] : "";
@@ -25,7 +25,8 @@ try {
   $text = isset($message['text']) ? $message['text'] : "";
 
   $text = trim($text);
-  $text = strtolower($text);
+  //$text = strtolower($text);
+  $text = substr($update['message'], 1, 1);
 
 catch (Exception $e) {
   $text = 'Caught exception: ',  $e->getMessage(), "\n";
