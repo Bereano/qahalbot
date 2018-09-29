@@ -5,6 +5,8 @@ try {
   $content = file_get_contents("php://input");
   $update = json_decode($content, true);
 
+  $a = 3/0;
+
   if(!$update)
   {
     exit;
