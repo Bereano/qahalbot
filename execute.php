@@ -10,6 +10,7 @@
     exit;
   }
 
+  $message = isset($update['message']) ? $update['message'] : "";
   $text = isset($message['text']) ? $message['text'] : "";
   $text = trim($text);
   if (substr($text, 0, 1) == '/')
@@ -17,7 +18,7 @@
     exit;
   }
 
-  $message = isset($update['message']) ? $update['message'] : "";
+
   $messageId = isset($message['message_id']) ? $message['message_id'] : "";
   $chatId = isset($message['chat']['id']) ? $message['chat']['id'] : "";
   $firstname = isset($message['chat']['first_name']) ? $message['chat']['first_name'] : "";
