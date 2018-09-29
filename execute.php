@@ -5,9 +5,6 @@ try {
   $content = file_get_contents("php://input");
   $update = json_decode($content, true);
 
-  $text = '';
-  throw new Exception("Test Eccezione!");
-
   if(!$update)
   {
     exit;
@@ -21,6 +18,7 @@ try {
     exit;
   }
 
+  throw new Exception("Test Eccezione!");
 
   $messageId = isset($message['message_id']) ? $message['message_id'] : "";
   $chatId = isset($message['chat']['id']) ? $message['chat']['id'] : "";
@@ -32,8 +30,6 @@ try {
   $text = strtolower($text);
 
 } catch (Exception $e) {
-  $text = 'Caught exception: ' . $e->getMessage();
-} catch (Throwable $e) {
   $text = 'Caught exception: ' . $e->getMessage();
 }
 
