@@ -28,7 +28,6 @@ try {
   $username = isset($message['chat']['username']) ? $message['chat']['username'] : "";
   $date = isset($message['date']) ? $message['date'] : "";
 
-
   $text = strtolower($text);
 
 } catch (Exception $e) {
@@ -37,6 +36,7 @@ try {
   $parameters = array('chat_id' => $chatId, "text" => $text);
   $parameters["method"] = "sendMessage";
   echo json_encode($parameters);
+  exit;
 }
 
 
@@ -44,5 +44,3 @@ header("Content-Type: application/json");
 $parameters = array('chat_id' => $chatId, "text" => $text);
 $parameters["method"] = "sendMessage";
 echo json_encode($parameters);
-
-?>
