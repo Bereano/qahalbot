@@ -7,6 +7,11 @@ if(!$update)
   exit;
 }
 
+if substr($update['message'], 1, 1) = '/'
+{
+  exit;
+}
+
 $message = isset($update['message']) ? $update['message'] : "";
 $messageId = isset($message['message_id']) ? $message['message_id'] : "";
 $chatId = isset($message['chat']['id']) ? $message['chat']['id'] : "";
