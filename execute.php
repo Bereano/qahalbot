@@ -5,7 +5,7 @@ try {
   $content = file_get_contents("php://input");
   $update = json_decode($content, true);
 
-  $a = 3/0;
+  throw new Exception("Test Eccezione!"); 
 
   if(!$update)
   {
