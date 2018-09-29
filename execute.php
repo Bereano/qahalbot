@@ -12,7 +12,7 @@
 
   $text = isset($message['text']) ? $message['text'] : "";
   $text = trim($text);
-  if (substr($text, 1, 1) == '/')
+  if (substr($text, 0, 1) == '/')
   {
     exit;
   }
