@@ -27,12 +27,8 @@ try {
   $date = isset($message['date']) ? $message['date'] : "";
 
   throw new Exception("Test Eccezione!");
-  
-  header("Content-Type: application/json");
-  $parameters = array('chat_id' => $chatId, "text" => 'test...');
-  $parameters["method"] = "sendMessage";
-  echo json_encode($parameters);
-  exit;
+
+  $a = 3/0;
 
   $text = strtolower($text);
 
