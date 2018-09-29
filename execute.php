@@ -23,9 +23,9 @@ try {
 
   switch ($text) {
     case '/help':
-      $text = '+---------------------------+' . '\n' .
-              '|Come possiamo aiutarti?    |' . '\n' .
-              '+---------------------------+' . '\n';
+      $text = '+---------------------------+' . "\n" .
+              '| Come possiamo aiutarti?   |' . "\n" .
+              '+---------------------------+' . "\n";
       break;
 
     default:
