@@ -10,10 +10,12 @@
     exit;
   }
 
-  /*if (substr($update['message'], 1, 1) == '/')
+  $text = isset($message['text']) ? $message['text'] : "";
+  $text = trim($text);
+  if (substr($text, 1, 1) == '/')
   {
     exit;
-  }*/
+  }
 
   $message = isset($update['message']) ? $update['message'] : "";
   $messageId = isset($message['message_id']) ? $message['message_id'] : "";
@@ -22,15 +24,13 @@
   $lastname = isset($message['chat']['last_name']) ? $message['chat']['last_name'] : "";
   $username = isset($message['chat']['username']) ? $message['chat']['username'] : "";
   $date = isset($message['date']) ? $message['date'] : "";
-  $text = isset($message['text']) ? $message['text'] : "";
 
-  $text = trim($text);
-  //$text = strtolower($text);
-  $text = substr($text, 0, 1);
 
-/*catch (Exception $e) {
+  $text = strtolower($text);
+
+catch (Exception $e) {
   $text = 'Caught exception: ',  $e->getMessage(), "\n";
-}*/
+}
 
 
 header("Content-Type: application/json");
