@@ -26,7 +26,7 @@
 
   $text = trim($text);
   //$text = strtolower($text);
-  $text = substr($message, 1, 1);
+  $text = substr($text, 0, 1);
 
 /*catch (Exception $e) {
   $text = 'Caught exception: ',  $e->getMessage(), "\n";
