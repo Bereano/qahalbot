@@ -10,7 +10,7 @@ try {
     exit;
   }
 
-  if substr($update['message'], 1, 1) = '/'
+  if (substr($update['message'], 1, 1) == '/')
   {
     exit;
   }
