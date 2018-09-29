@@ -13,17 +13,11 @@ try {
   $message = isset($update['message']) ? $update['message'] : "";
   $text = isset($message['text']) ? $message['text'] : "";
   $text = trim($text);
+
   if (substr($text, 0, 1) == '/')
   {
     exit;
   }
-
-  header("Content-Type: application/json");
-  $parameters = array('chat_id' => $chatId, "text" => 'test...');
-  $parameters["method"] = "sendMessage";
-  echo json_encode($parameters);
-
-  throw new Exception("Test Eccezione!");
 
   $messageId = isset($message['message_id']) ? $message['message_id'] : "";
   $chatId = isset($message['chat']['id']) ? $message['chat']['id'] : "";
@@ -31,6 +25,14 @@ try {
   $lastname = isset($message['chat']['last_name']) ? $message['chat']['last_name'] : "";
   $username = isset($message['chat']['username']) ? $message['chat']['username'] : "";
   $date = isset($message['date']) ? $message['date'] : "";
+
+  header("Content-Type: application/json");
+  $parameters = array('chat_id' => $chatId, "text" => 'test...');
+  $parameters["method"] = "sendMessage";
+  echo json_encode($parameters);
+  exit;
+
+  throw new Exception("Test Eccezione!");
 
   $text = strtolower($text);
 
