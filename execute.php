@@ -31,7 +31,9 @@ try {
   $text = strtolower($text);
 
 } catch (Exception $e) {
-  $text = 'Caught exception: ' . $e->getMessage();
+  //$text = 'Caught exception: ' . $e->getMessage();
+  $text = 'Errore!!!';
+
   header("Content-Type: application/json");
   $parameters = array('chat_id' => $chatId, "text" => $text);
   $parameters["method"] = "sendMessage";
